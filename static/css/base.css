@@ -11,6 +11,11 @@ html {
     width: 1.5rem;
 }
 
+.nav-link {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 20px;
+}
+
 
 /* -------------------------------- Media Queries */
 

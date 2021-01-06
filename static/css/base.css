@@ -11,11 +11,52 @@ html {
     width: 1.5rem;
 }
 
+/* -------------------------------- index page */
+
+.main-image {
+    background: url('/media/Background_image_home.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+}
+
 .nav-link {
     font-family: 'Roboto Slab', sans-serif;
     font-size: 20px;
+    color: #54D1F1;
 }
 
+.nav-link:hover {
+    color: #7C71AD;
+}
+
+.vertical-center {
+    min-height: 90vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.80);
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 25px;
+    color: #54D1F1;
+}
+
+.btn-subscribe {
+    background-color: #54D1F1;
+}
+
+.btn-subscribe:hover {
+    background-color: #7C71AD;
+}
+
+.main-link {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 25px;
+    color: #54D1F1;
+}
 
 /* -------------------------------- Media Queries */
 
@@ -37,6 +78,6 @@ html {
     }
 
     .header-container {
-        padding-top: 80px;
+        padding-top: 100px;
     }
 }

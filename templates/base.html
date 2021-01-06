@@ -45,13 +45,13 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center my-0">
                     <li class="list-inline-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link main-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="list-inline-item">
-                        <a class="nav-link" href="#">Merchandise</a>
+                        <a class="nav-link main-link" href="#">Merchandise</a>
                     </li>
                     <li class="list-inline-item">
-                        <a class="nav-link" href="#">Games</a>
+                        <a class="nav-link main-link" href="#">Games</a>
                     </li>
                 </ul>
             </div>
@@ -80,7 +80,7 @@
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
                                         £{{ grand_total|floatformat:2 }}

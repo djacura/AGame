@@ -30,17 +30,13 @@ html {
 }
 
 .vertical-center {
-    min-height: 90vh;
-    width: 100%;
-    justify-content: center;
+    min-height: 100%;
     align-items: center;
-    display: flex;
 }
 
 .jumbotron {
     background-color: rgba(0, 0, 0, 0.80);
     font-family: 'Roboto Slab', sans-serif;
-    font-size: 25px;
     color: #54D1F1;
 }
 
@@ -56,6 +52,48 @@ html {
     font-family: 'Roboto Slab', sans-serif;
     font-size: 25px;
     color: #54D1F1;
+}
+
+/* -------------------------------- about us section */
+
+.about-agame-background {
+    background-color: #1f2226;
+}
+
+.about-agame {
+    font-family: 'Roboto Slab', sans-serif;
+    color: #54D1F1;
+    font-size: 4em;
+    padding-top: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.about-icon {
+    font-size: 40px;
+    color: #54D1F1;
+    margin: 15px;
+}
+
+.heading-3 {
+    font-size: 25px;
+    color: #54D1F1;
+    margin: 5px;
+}
+
+.paragraph {
+    font-size: 15px;
+    color: #54D1F1;
+    margin: 5px;
+}
+
+.about-section {
+    padding: 40px;
+    padding-bottom: 70px;
+}
+
+.about-box {
+    margin: 20px;
 }
 
 /* -------------------------------- Media Queries */

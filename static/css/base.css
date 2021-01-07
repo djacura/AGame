@@ -71,7 +71,7 @@ html {
 
 .about-icon {
     font-size: 40px;
-    color: #54D1F1;
+    color: #7C71AD;
     margin: 15px;
 }
 
@@ -94,6 +94,21 @@ html {
 
 .about-box {
     margin: 20px;
+}
+
+.carousel-styling {
+    height: 500px;
+}
+
+.carousel{
+    width: 100%;
+    margin: auto;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 100%;
+    margin: auto;
 }
 
 /* -------------------------------- Media Queries */

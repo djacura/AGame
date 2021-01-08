@@ -63,8 +63,9 @@ html {
 .about-agame {
     font-family: 'Roboto Slab', sans-serif;
     color: #54D1F1;
-    font-size: 4em;
+    font-size: 45px;
     padding-top: 50px;
+    padding-bottom: 15px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -93,22 +94,11 @@ html {
 }
 
 .about-box {
-    margin: 20px;
+    padding-bottom: 20px;
 }
 
-.carousel-styling {
-    height: 500px;
-}
-
-.carousel{
-    width: 100%;
-    margin: auto;
-}
-
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    width: 100%;
-    margin: auto;
+.carousel-style {
+    background-color: #1f2226;
 }
 
 /* -------------------------------- Media Queries */

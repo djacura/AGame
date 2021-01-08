@@ -101,6 +101,28 @@ html {
     background-color: #1f2226;
 }
 
+/* -------------------------------- social footer section */
+
+.social {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.social-heading {
+    color: #54D1F1;
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+.social-link {
+    color: #54D1F1;
+    margin: 20px;
+}
+
+.social-link:hover {
+    color: #7C71AD;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

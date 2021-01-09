@@ -16,7 +16,7 @@ html {
 .main-image {
     background: url('/media/Background_image_home.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
 }
 
 .nav-link {

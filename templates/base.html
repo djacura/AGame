@@ -38,17 +38,17 @@
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{% url 'home' %}">
                     <img src="/media/AGame_Logo.jpg" width="240" height="80" alt="" loading="lazy">
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center my-0">
-                    <li class="list-inline-item active">
-                        <a class="nav-link main-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <li class="list-inline-item">
+                        <a class="nav-link main-link" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="list-inline-item">
-                        <a class="nav-link main-link" href="#">Merchandise</a>
+                        <a class="nav-link main-link" href="{% url 'products' %}">Merchandise</a>
                     </li>
                     <li class="list-inline-item">
                         <a class="nav-link main-link" href="#">Games</a>

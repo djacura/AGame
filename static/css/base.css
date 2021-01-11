@@ -143,6 +143,11 @@ html {
     z-index: -1;
 }
 
+.h-r {
+    background-color: #fff; 
+    border-top: 5px dotted #1f2226;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

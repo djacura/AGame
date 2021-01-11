@@ -58,6 +58,10 @@ html {
     color: #7C71AD;
 }
 
+.bg-grey {
+    background-color: #1f2226;
+}
+
 /* -------------------------------- about us section */
 
 .about-agame-background {
@@ -125,6 +129,18 @@ html {
 
 .social-link:hover {
     color: #7C71AD;
+}
+
+/* -------------------------------- Merchadise Page */
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
 }
 
 /* -------------------------------- Media Queries */

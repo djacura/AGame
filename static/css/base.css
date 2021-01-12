@@ -197,7 +197,11 @@ html {
 
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 180px;
+        padding-top: 172px;
+    }
+
+    .search-bar {
+        padding-top: 15px !important;
     }
 
     body {

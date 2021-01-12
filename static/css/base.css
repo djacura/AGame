@@ -148,6 +148,16 @@ html {
     border-top: 5px dotted #1f2226;
 }
 
+.main-title {
+    font-family: 'Roboto Slab', sans-serif;
+    color: #54D1F1;
+    font-size: 45px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 /* -------------------------------- Product detail Page */
 
 .product-title {
@@ -187,7 +197,7 @@ html {
 
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 163px;
+        padding-top: 180px;
     }
 
     body {

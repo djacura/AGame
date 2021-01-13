@@ -36,6 +36,25 @@
                         <small class="product-detail text-muted">No Rating</small>
                     {% endif %}
                     <p class="product-detail mt-3">{{ product.description }}</p>
+                    <form class="form" action="" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-12">
+                                <p class="product-detail mb-3 text-left font-weight-bold">Quantity:</p>
+                                <div class="input-group w-50">
+                                    <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-5">
+                            <a href="{% url 'products' %}" class="btn button btn-lg text-uppercase">
+                                Keep Shopping
+                            </a>
+                            <input type="submit" class="btn button btn-lg text-uppercase" value="Add To Cart">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </form>
                 </div>
             </div>
         </div>

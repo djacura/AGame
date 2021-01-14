@@ -22,7 +22,9 @@
         <div class="row">
             <div class="col text-center">
                 {% if cart_items %}
-                    <div class="table-responsive rounded"></div>
+                    <div class="table-responsive rounded">
+                        {{ cart_items }}
+                    </div>
                 {% else %}
                     <p class="heading-3 mb-5 text-center">Your Cart Is Empty!</p>
                     <a href="{% url 'products' %}" class="btn btn-subscribe btn-lg text-center">

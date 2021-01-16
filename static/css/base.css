@@ -171,6 +171,19 @@ html {
     font-size: 25px;
 }
 
+/* -------------------------------- Shopping cart Page */
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+.update-link:hover,
+.remove-item:hover {
+    text-decoration: none;
+}
+
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

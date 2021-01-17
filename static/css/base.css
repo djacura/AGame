@@ -183,6 +183,26 @@ html {
     text-decoration: none;
 }
 
+/* -------------------------------- Toasts */
+
+.text-blue {
+    color: #54D1F1;
+}
+
+.message-container {
+    position: fixed;
+    top: 88px;
+    right: 15px;
+    z-index: 999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 3px;
+}
 
 /* -------------------------------- Media Queries */
 
@@ -221,3 +241,8 @@ html {
         height: calc(100vh - 116px);
     }
 }
+
+@media (min-width: 684px) {
+    .header-container {
+        padding-top: 144px;
+    }

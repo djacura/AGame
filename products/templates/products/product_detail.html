@@ -87,10 +87,10 @@
                         </div>
 
                         <div class="col-12 mt-5">
-                            <a href="{% url 'products' %}" class="btn button btn-lg text-uppercase">
+                            <a href="{% url 'products' %}" class="btn button btn-lg text-uppercase mb-2">
                                 Keep Shopping
                             </a>
-                            <input type="submit" class="btn button btn-lg text-uppercase" value="Add To Cart">
+                            <input type="submit" class="btn button btn-lg text-uppercase mb-2" value="Add To Cart">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         {% endwith %}

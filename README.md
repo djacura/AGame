@@ -67,7 +67,23 @@ The Icons used on this site were taken from the website [Font Awesome](https://f
 
 The wireframes were created using the Balsamiq application, you can view my PDF of the wireframes
 that were created at the beginning of this project and have not been modified based on the final look of the website. 
-[Download Wireframes Here](NOLINKYET)
+[Download Wireframes Here](https://github.com/djacura/AGame/raw/master/assets/AGame%20wireframes%20PDF.pdf)
+
+
+# **Technologies Used**
+
+This Project Uses HTML, CSS, Javascript, Python, and Django Technologies.
+
+* [Python](https://www.python.org/) was used to create the logic code.
+* [Django](https://www.djangoproject.com/) Django is a high-level Python Web framework.
+* [Jquery](https://jquery.com/) was used for the Javascript Elements.
+* [Bootstrap 4.5](https://getbootstrap.com/) Design and customize responsive mobile-first sites.
+* [HTML 5](https://en.wikipedia.org/wiki/HTML) Markup language designed for the web browser.
+* [CSS 3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) Style sheet language used for styling the HTML.
+* [Github](https://github.com/) was used to store the code in a repository and then [Gitpod](https://www.gitpod.io/) was used to write the code.
+* [Heroku](https://www.heroku.com/) was used to deploy the site to the internet.
+* [Heroku Postgres](https://www.heroku.com/postgres) PostgreSQL's used for database.
+
 
 
 # **Credits**

@@ -35,7 +35,7 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs and discounts.
         """
-        self.order_total = self.lineitem.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.lineitem.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         self.grand_total = self.order_total + self.delivery_cost
         self.save()

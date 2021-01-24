@@ -58,7 +58,7 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_cart'))
 
-            request.session['save-info'] = 'save-info' in request.POST
+            request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
@@ -82,7 +82,7 @@ def checkout(request):
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your enviroment?')
+            Did you forget to set it in your environment?')
 
     template = 'checkout/checkout.html'
     context = {
@@ -98,7 +98,7 @@ def checkout_success(request, order_number):
     """
     Handle Successful Checkouts
     """
-    save_info = request.session.get('save-info')
+    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \

@@ -211,6 +211,18 @@ html {
     overflow-y: auto;
 }
 
+/* -------------------------------- Allauth pages */
+
+.allauth-link {
+    color: #7C71AD;
+    font-size: 18px;
+    
+}
+
+.allauth-link:hover {
+    color: #54D1F1;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

@@ -70,3 +70,7 @@ select option {
     padding: 0;
     padding-left: 10px;
 }
+
+.form-check-tick {
+    margin-right: 2.0rem !important;
+}

@@ -6,7 +6,7 @@
 #payment-form .form-control,
 #card-element {
     color: #000;
-    border: 2px solid #1f2226;
+    border: 1px solid #1f2226;
 }
 
 .StripeElement,
@@ -30,7 +30,7 @@
 }
 
 .stripe-style-input::placeholder {
-    color: #000;
+    color: #aab7c4;
 }
 
 .StripeElement--invalid

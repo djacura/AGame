@@ -1,0 +1,20 @@
+select,
+select option {
+    color: #000;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+.stripe-style-input {
+    color: #000;
+    border: 1px solid #1f2226;
+    margin-top: 25px;
+}
+
+.profile-title {
+    font-size: 25px;
+}
+
+

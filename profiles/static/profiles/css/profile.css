@@ -17,4 +17,8 @@ select option {
     font-size: 25px;
 }
 
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
+}
 

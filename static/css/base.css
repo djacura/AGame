@@ -158,6 +158,10 @@ html {
     text-transform: uppercase;
 }
 
+.text-edit {
+    color: #7C71AD;
+}
+
 /* -------------------------------- Product detail Page */
 
 .product-title {

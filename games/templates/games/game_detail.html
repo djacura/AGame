@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <div class="image-container my-5">
+                    {% if game.image %}
+                    <a href="{{ game.image.url }}" target="_blank">
+                        <img class="card-img-top img-fluid" src="{{ game.image.url }}" alt="{{ game.name }}">
+                    </a>
+                    {% else %}
+                    <a href="{{ game.image.url }}" target="_blank">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ game.name }}">
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="product-details-container mb-5 mt-md-5 text-center">
+                    <p class="product-title mb-2">{{ game.name }}</p>
+                    <p class="product-detail mt-3">{{ game.description }}</p>
+                    {% if request.user.is_superuser %}
+                        <small class="ml-3">
+                            <a class="text-edit" href="#">Edit </a> | 
+                            <a class="text-danger" href="#"> Delete</a>
+                        </small>
+                    {% endif %}
+                    <div class="col-12 mt-5">
+                        <a href="#" class="btn button btn-lg text-uppercase mb-2">
+                            Download Game
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

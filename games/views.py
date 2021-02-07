@@ -1,7 +1,9 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+
 from .models import Game
+from .forms import GameForm
 
 
 def all_games(request):
@@ -38,3 +40,15 @@ def game_detail(request, game_id):
     }
 
     return render(request, 'games/game_detail.html', context)
+
+
+def add_game(request):
+    """ Add a Game to the website """
+
+    form = GameForm()
+    template = 'games/add_game.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

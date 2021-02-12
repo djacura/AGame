@@ -105,6 +105,34 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <hr class="mb-4 h-r">
+                <div class="text-center">
+                    <h2 class="product-title mb-3">Add A New Review Below</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ comment_form | crispy }}
+                        <input class="btn button mb-4" type="submit" value="Add Review">
+                        <hr class="h-r my-4">
+                    </form>
+                </div>
+                {% for comment in comments %}
+                    <div class="card border-dark mb-3">
+                        <div class="card-header">{{ comment.name }}</div>
+                        <div class="card-body text-dark">
+                            <p class="card-text">{{ comment.review }}</p>
+                            <p class="card-text">{{ comment.created }}</p>
+                        </div>
+                    </div>
+                {% empty %}
+                    <h2 class="product-title mb-3 text-center">There are no Reviews yet</h2>
+                {% endfor %}
+                <hr class="my-4 h-r">
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block postloadjs %}

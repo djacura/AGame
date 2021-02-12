@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Comment
+from .forms import ProductForm, CommentForm
 
 
 def all_products(request):
@@ -41,9 +41,26 @@ def product_detail(request, product_id):
     """ A view to show the product detail page """
 
     product = get_object_or_404(Product, pk=product_id)
+    comments = product.comments.filter(active=True)
+    new_comment = None
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.product = product
+            new_comment.save()
+            messages.success(request, 'Successfully added Comment!')
+        else:
+            messages.error(request, 'Failed to add Comment. Please ensure the form is valid.')
+    else:
+        comment_form = CommentForm()
 
     context = {
         'product': product,
+        'comments': comments,
+        'new_comment': new_comment,
+        'comment_form': comment_form,
     }
 
     return render(request, 'products/product_detail.html', context)

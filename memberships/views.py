@@ -1,11 +1,10 @@
 from django.conf import settings
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.views.generic import ListView
+
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-
+from django.views.generic import ListView
 from .models import Membership, UserMembership, Subscription
 
 import stripe
@@ -25,6 +24,7 @@ def get_user_subscription(request):
     """Gets the subcription name (Logic and code by Mat @ JustDjango).
     Understood and implemented."""
 
+    user_membership_qs = UserMembership.objects.filter(user=request.user)
     user_subscription_qs = Subscription.objects.filter(
         user_membership=get_user_membership(request))
     if user_subscription_qs.exists():
@@ -84,9 +84,13 @@ def PaymentView(request):
     (Logic and code by Mat @ JustDjango). Understood and implemented."""
 
     user_membership = get_user_membership(request)
-    try:
-        selected_membership = get_selected_membership(request)
-    except:
-        return redirect(reverse("memberships:select"))
+    selected_membership = get_selected_membership(request)
 
     publicKey = settings.STRIPE_PUBLIC_KEY
+
+    context = {
+        'publicKey': publicKey,
+        'selected_membership': selected_membership
+    }
+
+    return render(request, 'memberships/membership_payment.html', context)

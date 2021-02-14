@@ -38,7 +38,7 @@
                         <h5 class="price">And Free Delivery</h5>
                     {% endif %}
                     {% if object.membership_type != 'Free' %}
-                    <form method="POST" action="{% url 'memberships:select' %}">
+                    <form method="POST" action="{% url 'memberships:select_membership' %}">
                         {% csrf_token %}
                         {% if object.membership_type != current_membership %}
                             <button class="btn button my-4 text-uppercase">Subscribe</button>

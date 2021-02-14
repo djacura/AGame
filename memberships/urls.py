@@ -1,6 +1,12 @@
 from django.urls import path
-from . import views
+from .views import (
+    MembershipSelectView,
+    PaymentView,
+)
+
+app_name = 'memberships'
 
 urlpatterns = [
-    path('', views.MembershipSelectView.as_view(), name='select_membership'),
+    path('', MembershipSelectView.as_view(), name='select_membership'),
+    path('payment/', PaymentView, name='payment'),
 ]

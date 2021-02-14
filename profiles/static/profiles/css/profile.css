@@ -39,6 +39,11 @@ select option {
     color: #7C71AD;
 }
 
+.mem-price {
+    font-size: 30px;
+    color: #7C71AD;
+}
+
 .Current-mem {
     font-size: 35px;
     color: #54D1F1;

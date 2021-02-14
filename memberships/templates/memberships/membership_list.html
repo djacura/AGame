@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="main-title px-2">Subscriptions</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            {% for object in object_list %}
+            <div class="col-12 col-md-6">
+                <div class="p-3 m-3 border shadow rounded text-center">
+                    <h2 class="paragraph profile-title mb-3">{{ object.membership_type }}</h2>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

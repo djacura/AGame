@@ -22,3 +22,24 @@ select option {
     overflow-y: auto;
 }
 
+/* -------------------------------- Memberships Page */
+
+.membership-title {
+    font-size: 35px;
+    color: #54D1F1;
+}
+
+.membership-p {
+    font-size: 25px;
+    color: #54D1F1;
+}
+
+.price {
+    font-size: 20px;
+    color: #7C71AD;
+}
+
+.Current-mem {
+    font-size: 35px;
+    color: #54D1F1;
+}

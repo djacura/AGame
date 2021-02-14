@@ -23,11 +23,33 @@
                 <hr>
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-5">
             {% for object in object_list %}
             <div class="col-12 col-md-6">
                 <div class="p-3 m-3 border shadow rounded text-center">
-                    <h2 class="paragraph profile-title mb-3">{{ object.membership_type }}</h2>
+                    <h2 class="membership-title mb-3">{{ object.membership_type }}</h2>
+                    <p class="price">Price: £{{ object.price }}<small> / month</small></p>
+                    <h4 class="membership-p mb-3">Includes:</h4>
+                    <h5 class="price">Personal Profile Page</h5>
+                    <h5 class="price">Merchandise Store</h5>
+                    {% if object.membership_type == 'Professional' %}
+                        <h5 class="price">Play Games</h5>
+                        <h5 class="price">10% off the Store</h5>
+                        <h5 class="price">And Free Delivery</h5>
+                    {% endif %}
+                    {% if object.membership_type != 'Free' %}
+                    <form method="POST" action="{% url 'memberships:select' %}">
+                        {% csrf_token %}
+                        {% if object.membership_type != current_membership %}
+                            <button class="btn button my-4 text-uppercase">Subscribe</button>
+                        {% else %}
+                            <p class="Current-mem">Your Current Membership</p>
+                        {% endif %}
+                        <input type="hidden" name="membership_type" value="{{ object.membership_type }}">
+                    </form>
+                    {% else %}
+                        <p class="Current-mem my-5">Your Current Membership</p>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}

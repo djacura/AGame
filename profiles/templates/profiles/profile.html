@@ -24,7 +24,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-5 offset-lg-1 col-12">
+            <div class="col-lg-4 col-12">
+                <div class="p-3 m-3 border shadow rounded text-center">
+                    <p class="paragraph profile-title mb-4">Profile Admin</p>
+                    <p class="paragraph mb-4">{{ user.email }}</p>
+                    <p class="paragraph mb-4">Subscription: {{ user_membership.membership.membership_type }}</p>
+                    <p class="paragraph mb-4">Password reset</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
                 <div class="p-3 m-3 border shadow rounded text-center">
                     <p class="paragraph profile-title mb-4">Default Delivery Information</p>
                     <form class="my-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
@@ -34,7 +42,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-lg-5 col-12">
+            <div class="col-lg-4 col-12">
                 <div class="p-3 m-3 border shadow rounded text-center">
                     <p class="paragraph profile-title mb-4">Order history</p>
                     <div class="order-history table-responsive">

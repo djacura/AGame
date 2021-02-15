@@ -5,6 +5,11 @@ from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order
+from memberships.views import (
+    get_user_membership,
+    get_selected_membership,
+    get_user_subscription
+)
 
 
 @login_required
@@ -13,6 +18,8 @@ def profile(request):
     Displays the Users Profile
     """
     profile = get_object_or_404(UserProfile, user=request.user)
+    user_membership = get_user_membership(request)
+    user_subscription = get_user_subscription(request)
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -30,6 +37,8 @@ def profile(request):
         'form': form,
         'orders': orders,
         'on_profile_page': True,
+        'user_membership': user_membership,
+        'user_subscription': user_subscription,
     }
 
     return render(request, template, context)

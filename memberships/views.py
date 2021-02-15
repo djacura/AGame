@@ -80,7 +80,7 @@ class MembershipSelectView(ListView):
 
 
 def PaymentView(request):
-    """Provide user with payment form and payment 
+    """Provide user with payment form and payment
     (Logic and code by Mat @ JustDjango). Understood and implemented."""
 
     user_membership = get_user_membership(request)

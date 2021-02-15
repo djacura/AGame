@@ -88,9 +88,53 @@ def PaymentView(request):
 
     publicKey = settings.STRIPE_PUBLIC_KEY
 
+    if request.method == "POST":
+        try:
+            token = request.POST['stripeToken']
+            customer = stripe.Customer.retrieve(
+                user_membership.stripe_customer_id)
+            customer.source = token
+            customer.save()
+            subscription = stripe.Subscription.create(
+                customer=user_membership.stripe_customer_id,
+                items=[
+                    {
+                        "plan": selected_membership.stripe_plan_id,
+                    },
+                ]
+            )
+            return redirect(reverse("memberships:update_transactions",
+                                    kwargs={'subscription_id': subscription.id}))
+        except:
+            messages.error(
+                request, "An error has occurred, investigate it in the console")
     context = {
         'publicKey': publicKey,
         'selected_membership': selected_membership
     }
-
     return render(request, 'memberships/membership_payment.html', context)
+
+
+def updateTransactions(request, subscription_id):
+    """ Updating the UserMembership model on focus backend 
+    (Logic and code by Mat @ JustDjango). Understood and implemented."""
+
+    user_membership = get_user_membership(request)
+    selected_membership = get_selected_membership(request)
+
+    user_membership.membership = selected_membership
+    user_membership.save()
+
+    sub, created = Subscription.objects.get_or_create(
+        user_membership=user_membership)
+    sub.stripe_subscription_id = subscription_id
+    sub.active = True
+    sub.save()
+
+    try:
+        del request.session['selected_membership_type']
+    except:
+        pass
+    messages.info(request, 'Successfully Subscribed To {} membership'.format(
+        selected_membership))
+    return redirect('/profiles')

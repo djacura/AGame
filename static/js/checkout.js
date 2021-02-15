@@ -1,5 +1,5 @@
 // Create a Stripe client.
-// Code form Stripe Docs
+// Code from Stripe Docs
 var stripe = Stripe("pk_test_51HxqfMDnSE9zSCJz2oGm42Uft9J7C8K9GOWGlLwyvJrdEvBxwFLgYD6Zaori8dreKQ2lygv1DSXYAz2OGGmIRcmj00ZRR53quF");
 
 // Create an instance of Elements.

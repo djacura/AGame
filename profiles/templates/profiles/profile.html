@@ -29,6 +29,14 @@
                     <p class="paragraph profile-title mb-4">Profile Admin</p>
                     <p class="paragraph mb-4">{{ user.email }}</p>
                     <p class="paragraph mb-4">Subscription: {{ user_membership.membership.membership_type }}</p>
+                    {% if user_subscription.active != False %}
+                        <p class="paragraph mb-4">Since: {{ user_subscription.get_created_date }}</p>
+                        <p class="paragraph mb-4">Next payment due: {{ user_subscription.get_next_billing_date }}</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn button-cancel mb-4" data-toggle="modal" data-target="#staticBackdrop">
+                            Cancel Subscription
+                        </button>
+                    {% endif %}
                     <p class="paragraph mb-4">Password reset</p>
                 </div>
             </div>
@@ -86,6 +94,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="text-center">
+                <h5 class="paragraph mt-4 mb-3 profile-title">Cancel Subscription</h5>
+            </div>
+            <div class="modal-body text-center">
+                <p>Are You Sure You want to Cancel Your Subscription?</p>
+                <p>You Will lose your 10% off the Store and Free Delivery!</p>
+                <p>If your sure, click the button below to Cancel.</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
+                <a class="btn button-cancel" href="{% url 'memberships:cancel' %}">Cancel Subscription</a>
+            </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
 
 {% block postloadjs %}

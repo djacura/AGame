@@ -80,6 +80,7 @@ class MembershipSelectView(ListView):
         return HttpResponseRedirect(reverse('memberships:payment'))
 
 
+@login_required
 def PaymentView(request):
     """Provide user with payment form and payment
     (Logic and code by Mat @ JustDjango). Understood and implemented."""
@@ -116,6 +117,7 @@ def PaymentView(request):
     return render(request, 'memberships/membership_payment.html', context)
 
 
+@login_required
 def updateTransactions(request, subscription_id):
     """ Updating the UserMembership model on focus backend 
     (Logic and code by Mat @ JustDjango). Understood and implemented."""
@@ -138,4 +140,33 @@ def updateTransactions(request, subscription_id):
         pass
     messages.info(request, 'Successfully Subscribed To {} membership'.format(
         selected_membership))
+    return redirect('/profiles')
+
+
+@login_required
+def cancelsubscription(request):
+    """
+    Checks to see it user is active, if true retrieves stripe id and deletes it,
+    Then sets user active to false, Then turns user membership back to free.
+    (Logic and code by Mat @ JustDjango). Understood and implemented.
+    """
+    user_sub = get_user_subscription(request)
+
+    if user_sub.active == False:
+        messages.info(request, "You dont have a active membership")
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    sub = stripe.Subscription.retrieve(user_sub.stripe_subscription_id)
+    sub.delete()
+
+    user_sub.active = False
+    user_sub.save()
+
+    free_membership = Membership.objects.filter(membership_type='Free').first()
+    user_membership = get_user_membership(request)
+    user_membership.membership = free_membership
+    user_membership.save()
+
+    messages.info(
+        request, "Successfully cancelled membership!")
+
     return redirect('/profiles')

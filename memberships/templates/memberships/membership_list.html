@@ -43,7 +43,7 @@
                         {% if object.membership_type != current_membership %}
                             <button class="btn button my-4 text-uppercase">Subscribe</button>
                         {% else %}
-                            <p class="Current-mem">Your Current Membership</p>
+                            <p class="Current-mem my-5">Your Current Membership</p>
                         {% endif %}
                         <input type="hidden" name="membership_type" value="{{ object.membership_type }}">
                     </form>

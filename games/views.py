@@ -5,6 +5,11 @@ from django.db.models import Q
 
 from .models import Game
 from .forms import GameForm
+from memberships.views import (
+    get_user_membership,
+    get_selected_membership,
+    get_user_subscription
+)
 
 
 def all_games(request):

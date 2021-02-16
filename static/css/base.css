@@ -48,6 +48,15 @@ html {
     background-color: #7C71AD;
 }
 
+.button-cancel {
+    background-color: rgb(253, 49, 49);
+    color: white;
+}
+
+.button-cancel:hover {
+    background-color: rgb(255, 0, 0);
+}
+
 .main-link {
     font-family: 'Roboto Slab', sans-serif;
     font-size: 25px;

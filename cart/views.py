@@ -1,16 +1,19 @@
 from django.conf import settings
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from products.models import Product
 
 
+@login_required
 def view_cart(request):
     """ A view to render the shopping cart page """
 
     return render(request, 'cart/cart.html')
 
 
+@login_required
 def add_to_cart(request, item_id):
     """ Add quantity of the product to the cart """
 
@@ -45,6 +48,7 @@ def add_to_cart(request, item_id):
     return redirect(redirect_url)
 
 
+@login_required
 def update_cart(request, item_id):
     """ updating the quantity of the product to the cart """
 
@@ -76,6 +80,7 @@ def update_cart(request, item_id):
     return redirect(reverse('view_cart'))
 
 
+@login_required
 def remove_from_cart(request, item_id):
     """ Removing a product from the cart """
 

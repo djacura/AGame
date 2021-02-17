@@ -21,7 +21,6 @@ def all_games(request):
     else:
         membership_active = False
 
-    print(membership_active)
     if not membership_active:
         messages.error(request, 'Sorry, only Pro Members can View Games.')
         return redirect(reverse('home'))
@@ -53,10 +52,25 @@ def all_games(request):
 def game_detail(request, game_id):
     """ A view to see the Game detail page """
 
+    if request.user.is_authenticated:
+        current_membership = get_user_membership(request)
+        current_membership = str(current_membership.membership)
+
+    if current_membership == 'Professional':
+        membership_active = True
+    else:
+        membership_active = False
+
+    if not membership_active:
+        messages.error(request, 'Sorry, only Pro Members can View Games.')
+        return redirect(reverse('home'))
+
     game = get_object_or_404(Game, pk=game_id)
 
     context = {
         'game': game,
+        'current_membership': current_membership,
+        'membership_active': membership_active,
     }
 
     return render(request, 'games/game_detail.html', context)

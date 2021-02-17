@@ -54,9 +54,11 @@
                     <li class="list-inline-item">
                         <a class="nav-link main-link" href="{% url 'games' %}">Games</a>
                     </li>
+                    {% if request.user.is_authenticated %}
                     <li class="list-inline-item">
                         <a class="nav-link main-link" href="{% url 'memberships:select_membership' %}">Subscriptions</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">

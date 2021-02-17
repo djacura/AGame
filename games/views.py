@@ -5,15 +5,26 @@ from django.db.models import Q
 
 from .models import Game
 from .forms import GameForm
-from memberships.views import (
-    get_user_membership,
-    get_selected_membership,
-    get_user_subscription
-)
+from memberships.views import get_user_membership
 
 
+@login_required
 def all_games(request):
     """ A view to show and search for Games """
+
+    if request.user.is_authenticated:
+        current_membership = get_user_membership(request)
+        current_membership = str(current_membership.membership)
+
+    if current_membership == 'Professional':
+        membership_active = True
+    else:
+        membership_active = False
+
+    print(membership_active)
+    if not membership_active:
+        messages.error(request, 'Sorry, only Pro Members can View Games.')
+        return redirect(reverse('home'))
 
     games = Game.objects.all()
     query = None
@@ -31,11 +42,14 @@ def all_games(request):
     context = {
         'games': games,
         'search_term': query,
+        'current_membership': current_membership,
+        'membership_active': membership_active,
     }
 
     return render(request, 'games/games.html', context)
 
 
+@login_required
 def game_detail(request, game_id):
     """ A view to see the Game detail page """
 

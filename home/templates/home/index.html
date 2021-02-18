@@ -16,8 +16,10 @@
                 <div class="jumbotron text-center">
                     <h1 class="display-4">Welcome To AGame</h1>
                     <hr class="my-4">
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper urna sed faucibus hendrerit. 
-                        Aliquam fringilla lorem ex, quis porta orci dictum efficitur.</p>
+                    <p class="lead">AGame is a subscription based service, Where Gamers can come and Subscribe and play games.
+                        We also have a Merchandise shop where you can buy your gaming gear. So what are you waiting for Sign-up
+                        and come a get on your A-Game.
+                    </p>
                     <hr class="my-4">
                     {% if current_membership == False %}
                         <a class="btn button btn-lg" href="{% url 'account_signup' %}" role="button">Signup Here</a>
@@ -102,6 +104,57 @@
             <img src="/media/grand-theft-auto.jpg" class="img-fluid" alt="Responsive image">
             <img src="/media/battlefield-4.png" class="img-fluid" alt="Responsive image">
             <img src="/media/fallout-image.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+
+    <div class="about-agame-background pb-5">
+        <h2 class="about-agame px-2">Frequently Asked Questions?</h2>
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="accordion" id="accordionExample">
+                <div class="card about-agame-background mt-3">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="paragraph btn btn-faq btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What games will I have access to with the AGame subscription?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body paragraph">
+                            Subscribing to AGame will give you access to a growing catalog of games, including any new releases that come out and also some Exclusives.
+                        </div>
+                    </div>
+                </div>
+                <div class="card about-agame-background">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-faq paragraph btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            How can I buy my AGame subscription?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body paragraph">
+                            You can subscribe to AGame using a credit card, if this payment method is available in your country. And once Signed-up and Logged in you can click the Subscriptions link at the top of the Page.
+                        </div>
+                    </div>
+                </div>
+                <div class="card about-agame-background">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-faq paragraph btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How can I cancel my AGame subscription?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body paragraph">
+                            If you decide to cancel your subscription, You can cancel by heading to Your profile page and clicking on the cancel subscription button.
+                            You can cancel at any time, without any need for notice. After this, the subscription will be cancelled and will not renew itself.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

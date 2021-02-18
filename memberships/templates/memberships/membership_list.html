@@ -36,19 +36,19 @@
                         <h5 class="price">Play Games</h5>
                         <h5 class="price">10% off the Store</h5>
                         <h5 class="price">And Free Delivery</h5>
+                    {% else %}
+                        <p class="Current-mem my-5">The Free Membership</p>
                     {% endif %}
                     {% if object.membership_type != 'Free' %}
                     <form method="POST" action="{% url 'memberships:select_membership' %}">
                         {% csrf_token %}
                         {% if object.membership_type != current_membership %}
-                            <button class="btn button my-4 text-uppercase">Subscribe</button>
+                            <button class="btn btn-lg button my-4 text-uppercase">Subscribe</button>
                         {% else %}
                             <p class="Current-mem my-5">Your Current Membership</p>
                         {% endif %}
                         <input type="hidden" name="membership_type" value="{{ object.membership_type }}">
                     </form>
-                    {% else %}
-                        <p class="Current-mem my-5">Your Current Membership</p>
                     {% endif %}
                 </div>
             </div>

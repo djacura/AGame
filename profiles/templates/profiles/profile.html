@@ -27,17 +27,17 @@
             <div class="col-lg-4 col-12">
                 <div class="p-3 m-3 border shadow rounded text-center">
                     <p class="paragraph profile-title mb-4">Profile Admin</p>
-                    <p class="paragraph mb-4">{{ user.email }}</p>
-                    <p class="paragraph mb-4">Subscription: {{ user_membership.membership.membership_type }}</p>
+                    <p class="admin-title mb-4">User Email: <strong class="price">{{ user.email }}</strong></p>
+                    <p class="admin-title mb-4">Current Subscription: <strong class="price">{{ user_membership.membership.membership_type }}</strong></p>
                     {% if user_subscription.active != False %}
-                        <p class="paragraph mb-4">Since: {{ user_subscription.get_created_date }}</p>
-                        <p class="paragraph mb-4">Next payment due: {{ user_subscription.get_next_billing_date }}</p>
+                        <p class="admin-title mb-4">Since: <strong class="price">{{ user_subscription.get_created_date }}</strong></p>
+                        <p class="admin-title mb-4">Next payment due: <strong class="price">{{ user_subscription.get_next_billing_date }}</strong></p>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn button-cancel mb-4" data-toggle="modal" data-target="#staticBackdrop">
+                        <button type="button" class="btn button-cancel mb-3" data-toggle="modal" data-target="#staticBackdrop">
                             Cancel Subscription
                         </button>
                     {% endif %}
-                    <p class="paragraph mb-4">Password reset</p>
+                    <p><a class="btn button my-3" href="{% url 'account_reset_password' %}" role="button">Password Reset</a></p>
                 </div>
             </div>
             <div class="col-lg-4 col-12">

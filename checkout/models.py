@@ -26,7 +26,9 @@ class Order(models.Model):
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
+    sub_discount = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    sub_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     original_cart = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
@@ -43,8 +45,15 @@ class Order(models.Model):
         accounting for delivery costs and discounts.
         """
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
-        self.grand_total = self.order_total + self.delivery_cost
+
+        if self.sub_discount > 0:
+            self.sub_discount = self.order_total * settings.SUB_DISCOUNT_PERCENTAGE / 100
+        else:
+            self.sub_discount = 0
+
+        self.sub_total = self.order_total - self.sub_discount
+        self.delivery_cost = self.sub_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+        self.grand_total = self.sub_total + self.delivery_cost
         self.save()
 
     def save(self, *args, **kwargs):

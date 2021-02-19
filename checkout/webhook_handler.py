@@ -47,6 +47,13 @@ class StripeWH_Handler:
         Handle the payment intent succeeded webhook from Stripe
         """
         intent = event.data.object
+
+        if intent.description == 'Subscription creation':
+            return HttpResponse(
+                content=f'Webhook Subscription payments revieved: {event["type"]}',
+                status=200
+            )
+
         pid = intent.id
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
@@ -78,7 +85,7 @@ class StripeWH_Handler:
 
         order_exists = False
         attempt = 1
-        while attempt <= 5:
+        while attempt <= 7:
             try:
                 order = Order.objects.get(
                     full_name__iexact=shipping_details.name,

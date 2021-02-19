@@ -36,11 +36,19 @@
                             <a class="text-danger" href="{% url 'delete_game' game.id %}"> Delete</a>
                         </small>
                     {% endif %}
+                    {% if game.name == 'Memory Game' %}
+                    <div class="col-12 mt-5">
+                        <a href="https://djacura.github.io/memory-game/index.html" class="btn button btn-lg text-uppercase mb-2">
+                            Play Game
+                        </a>
+                    </div>
+                    {% else %}
                     <div class="col-12 mt-5">
                         <a href="#" class="btn button btn-lg text-uppercase mb-2">
                             Download Game
                         </a>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

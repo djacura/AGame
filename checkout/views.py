@@ -17,6 +17,7 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """(Login and Code for Code Institute)."""
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -55,6 +56,9 @@ def checkout(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
+            user_discount = cart_contents(request)
+            discount = user_discount['discount']
+            order.sub_discount = discount
             order.original_cart = json.dumps(cart)
             order.save()
             for item_id, item_data in cart.items():
@@ -96,8 +100,9 @@ def checkout(request):
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
-        total = current_cart['grand_total']
-        stripe_total = round(total * 100)
+        discount = current_cart['discount']
+        grand_total = current_cart['grand_total']
+        stripe_total = round(grand_total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,

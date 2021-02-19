@@ -206,6 +206,10 @@ html {
     text-decoration: none;
 }
 
+.d-block .btn {
+    margin: 5px;
+}
+
 /* -------------------------------- Toasts */
 
 .text-blue {

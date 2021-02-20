@@ -45,12 +45,16 @@ card.addEventListener("change", function (event) {
 var form = document.getElementById("payment-form");
 form.addEventListener("submit", function (event) {
     event.preventDefault();
+    $('#payment-form').fadeToggle(100);
+    $('#loading-overlay').fadeToggle(100);
 
     stripe.createToken(card).then(function (result) {
         if (result.error) {
             // Inform the user if there was an error.
             var errorElement = document.getElementById("card-errors");
             errorElement.textContent = result.error.message;
+            $('#payment-form').fadeToggle(100);
+            $('#loading-overlay').fadeToggle(100);
         } else {
             // Send the token to your server.
             stripeTokenHandler(result.token);

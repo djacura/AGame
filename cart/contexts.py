@@ -61,12 +61,14 @@ def cart_contents(request):
     else:
         discount = 0
 
+    delivery = 0
     cart_total = total
     sub_total = cart_total - discount
-    if user_discount:
-        delivery = 0
-    else:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+    if request.user.is_authenticated:
+        if user_discount:
+            delivery = 0
+        else:
+            delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
     grand_total = sub_total + delivery
     discount_percentage = Decimal(settings.SUB_DISCOUNT_PERCENTAGE)
 

@@ -63,12 +63,25 @@
 
 select,
 select option {
-    color: #000;
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
 }
 
 #id_country {
     padding: 0;
     padding-left: 10px;
+}
+
+#id_country option:not(:first-child) {
+    color: #000;
+}
+
+#id_country option:first-child {
+    color: #aab7c4;
 }
 
 .form-check-tick {

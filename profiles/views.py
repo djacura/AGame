@@ -21,6 +21,13 @@ def profile(request):
     user_membership = get_user_membership(request)
     user_subscription = get_user_subscription(request)
 
+    if request.user.is_authenticated:
+        current_membership = get_user_membership(request)
+        current_membership = str(current_membership.membership)
+
+    else:
+        current_membership = False
+
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
@@ -39,6 +46,7 @@ def profile(request):
         'on_profile_page': True,
         'user_membership': user_membership,
         'user_subscription': user_subscription,
+        'current_membership': current_membership,
     }
 
     return render(request, template, context)

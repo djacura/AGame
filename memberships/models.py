@@ -16,9 +16,9 @@ MEMBERSHIP_CHOICES = (
 class Membership(models.Model):
     slug = models.SlugField()
     membership_type = models.CharField(
-            choices=MEMBERSHIP_CHOICES,
-            default='Free',
-            max_length=30)
+        choices=MEMBERSHIP_CHOICES,
+        default='Free',
+        max_length=30)
     price = models.IntegerField(default=15)
     stripe_plan_id = models.CharField(max_length=40)
 
@@ -47,7 +47,9 @@ def post_save_usermembership_create(sender, instance, created, *args, **kwargs):
 
     if user_membership.stripe_customer_id is None or user_membership.stripe_customer_id == '':
         new_customer_id = stripe.Customer.create(email=instance.email)
+        free_membership = Membership.objects.get(membership_type='Free')
         user_membership.stripe_customer_id = new_customer_id['id']
+        user_membership.membership = free_membership
         user_membership.save()
 
 

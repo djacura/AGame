@@ -99,7 +99,7 @@
                     </div>
                 {% else %}
                     <p class="heading-3 mb-5 text-center">Your Cart Is Empty!</p>
-                    <img class="img-fluid" src="/media/empty cart.png" alt="Empty Cart">
+                    <img class="img-fluid" src="{{ MEDIA_URL }}/media/empty cart.png" alt="Empty Cart">
                     <a href="{% url 'products' %}" class="btn button btn-lg text-center">
                         Keep Shopping
                     </a>

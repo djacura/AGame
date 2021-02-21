@@ -1,0 +1,18 @@
+Hello {{ intent.account_name }}!
+
+This is a invoice for you subcription at AGame
+Stripe invoice: {{ hosted_invoice_url }}
+Stripe Invoice Pdf: {{ invoice_pdf }}
+
+
+Total paid: £{{ amount_paid|floatformat:2 }}
+Start Period: {{ period_start }}
+
+
+Thank you for Subscribing.
+
+If you have any questions, feel free to contact us at AGame@examaple.com
+
+Your sincerly,
+
+AGame

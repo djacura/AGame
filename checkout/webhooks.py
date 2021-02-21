@@ -40,6 +40,8 @@ def webhook(request):
     event_map = {
         'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
         'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
+        'customer.subcription.created': handler.handle_subscription_created,
+        'invoice.paid': handler.handle_invoice_paid,
     }
 
     # Get the webhook type from Stripe

@@ -356,6 +356,10 @@ html {
         font-size: 1rem;
     }
 
+    .mem-title {
+        font-size: 2rem;
+    }
+
 }
 
 @media (min-width: 684px) {

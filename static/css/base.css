@@ -11,6 +11,10 @@ html {
     width: 1.5rem;
 }
 
+.a .btn-outline-dark {
+    text-decoration: none;
+}
+
 /* -------------------------------- index page */
 
 .main-image {

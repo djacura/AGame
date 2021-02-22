@@ -9,8 +9,10 @@
         <li class="nav-item dropdown">
             <a class="nav-link main-link" href="{% url 'games' %}">Games</a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link main-link" href="{% url 'memberships:select_membership' %}">Subscriptions</a>
-        </li>
+        {% if request.user.is_authenticated %}
+            <li class="list-inline-item">
+                <a class="nav-link main-link" href="{% url 'memberships:select_membership' %}">Subscriptions</a>
+            </li>
+        {% endif %}
     </ul>
 </div>

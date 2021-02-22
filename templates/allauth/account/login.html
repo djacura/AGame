@@ -14,9 +14,9 @@
 {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please login with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a AGame account or login below:{% endblocktrans %}</p>
+<p class="paragraph mb-4">{% blocktrans with site.name as site_name %}Please Sign-up with one
+of your existing third party accounts. Or,  <a class="allauth-link" href="{{ signup_url }}"> sign-up </a>
+for a AGame account or login below if you already have an account:{% endblocktrans %}</p>
 
 <div class="socialaccount_ballot mb-2">
     {% include "socialaccount/snippets/provider_list.html" with process="login" %}
@@ -39,7 +39,7 @@ for a AGame account or login below:{% endblocktrans %}</p>
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   <a class="btn button" href="{% url 'home' %}">Home</a>
-  <button class="btn button primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <button class="btn button primaryAction" type="submit">{% trans "Login" %}</button>
   <p class="my-3">
     <a class="allauth-link secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </p>

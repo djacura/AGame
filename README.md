@@ -19,6 +19,21 @@ This website is intended for users to be able to be able to sign up for a Game s
 play games, they will also be able to shop on the merchandise store. all while using having an account that can track their subscription status
 and also view their account order history and cancel their subscription.
 
+## Table of Contents
+
+1.  [**UX**](#ux)
+    - [**Project Goals**](#project-goals)
+    - [**User Stories**](#user-stories)
+    - [**Design**](#design)
+    - [**Layout**](#layout)
+    - [**Font**](#font)
+    - [**Colours**](#colours)
+    - [**Icons**](#icons)
+    - [**WireFrames**](#wireframes)
+2.  [**Technologies Used**](#technologies-used)
+
+---
+
 # UX
 
 ### **Project Goals**
@@ -29,6 +44,8 @@ they could also shop on the merhandise store and be able to purchase products fr
 a profile account that they could login with, and with this track their order history and be able to cancel their subscription as they wish.
 
 ### User Stories
+
+#### User:
 
 1. As a User I want to be able to view a list of games I can play so I can see what I want to play.
 2. As a User I want to be able to Easily Register for an Account so I can View my profile.
@@ -46,10 +63,19 @@ a profile account that they could login with, and with this track their order hi
 14. As a User I want to be able to cancel my subscription at any point So that I no longer pay for it.
 15. As a User I want to be able to view my subscription status so that I can see if it is active or not.
 16. As a User I want to be able to Login with a Social media Account So it's easier for me to be able to login.
+
+#### Admin:
+
 17. As a Admin I want to be able to Add a product So that I can add new products to the merchandise page.
 18. As a Admin I want to be able to Edit/Update an Item So that I can change details about the product.
 19. As a Admin I want to be able to Delete a product So that I can remove item not for sale anymore.
 20. As a Admin I want to be able to Add new Games So that I can increase the Library of Game avaialbe to a User.
+
+<div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+
+</div>
 
 ### **Design**
 
@@ -63,7 +89,7 @@ The Layout of the site was using a Grid formation and layout taken from the [Boo
 this webiste was designed heavily off the back of the Boutique Ado mini project, that was done just before this milestone project,
 As I feel this had the perfect base layout for creating my webiste and a mobile first approach.
 
-### Fonts
+### Font
 
 The fonts that I decided to use was "Roboto Slab" and "Sans serif" as a backup and found this using 
 [Google fonts website](https://fonts.google.com/) Which worked well from my previous Project.
@@ -83,6 +109,36 @@ The wireframes were created using the Balsamiq application, you can view my PDF 
 that were created at the beginning of this project and have not been modified based on the final look of the website. 
 [Download Wireframes Here](https://github.com/djacura/AGame/raw/master/assets/AGame%20wireframes%20PDF.pdf)
 
+<div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+
+</div>
+
+---
+
+# Structure
+
+## Basic Structure
+
+The basic structure of the web page is
+
+- _Navigation_ - Top level
+- _Body_ - Main page elements
+- _Footer_ - Logo, legal and social links
+
+### Sign Up (Registration) and Login
+
+I have used a 3rd Party package called [Allauth](https://django-allauth.readthedocs.io/en/latest/) to take care of the logic.
+The users are asked to fill in the Registration with fields ‘Email’, ‘Username’, and password, this is done twice to make sure they are both the same.
+You may also use the social account to sign up and create an account. all accounts start with a 'Free' Membership when created.
+
+**Sign Up and Login.**
+You may use the social account buttons to sign in or use the form.
+The form has two fields, ‘email’ and ‘Password’ and a remember me button and a link to your if you have forgotten your password.
+All of [Allauth](https://django-allauth.readthedocs.io/en/latest/) I have customised the forms and buttons to fit the themes of the site.
+
+---
 
 # **Technologies Used**
 
@@ -98,6 +154,7 @@ This Project Uses HTML, CSS, Javascript, Python, and Django Technologies.
 * [Heroku](https://www.heroku.com/) was used to deploy the site to the internet.
 * [Heroku Postgres](https://www.heroku.com/postgres) PostgreSQL's used for database.
 
+---
 
 
 # **Credits**

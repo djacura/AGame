@@ -12,19 +12,6 @@ from memberships.views import get_user_membership
 def all_games(request):
     """ A view to show and search for Games """
 
-    if request.user.is_authenticated:
-        current_membership = get_user_membership(request)
-        current_membership = str(current_membership.membership)
-
-    if current_membership == 'Professional':
-        membership_active = True
-    else:
-        membership_active = False
-
-    if not membership_active:
-        messages.error(request, 'Sorry, only Pro Members can View Games.')
-        return redirect(reverse('home'))
-
     games = Game.objects.all()
     query = None
 
@@ -41,8 +28,6 @@ def all_games(request):
     context = {
         'games': games,
         'search_term': query,
-        'current_membership': current_membership,
-        'membership_active': membership_active,
     }
 
     return render(request, 'games/games.html', context)

@@ -1,6 +1,20 @@
 # AGame
 
-This is my AGame Webiste, that I have created using HTML, CSS, Javascript and Python code using Django and then deployed on Heroku. 
+## <i> Full Stack Frameworks With Django - Code institute MS4 project </i>
+
+---
+
+## Demo
+
+![mockups](media/mockup_picture.JPG)
+
+[![Generic badge](https://img.shields.io/badge/AGame_live_demo-Here-<>.svg)](https://agame-app-ms4.herokuapp.com/)
+
+---
+
+**AGame** - Is an online Game subscription servicve where you can come and get on your A Game!
+
+This is my AGame Website, that I have created using HTML, CSS, Javascript and Python code using Django and then deployed on Heroku. 
 This website is intended for users to be able to be able to sign up for a Game subscription that will then enable them to download and then
 play games, they will also be able to shop on the merchandise store. all while using having an account that can track their subscription status
 and also view their account order history and cancel their subscription.

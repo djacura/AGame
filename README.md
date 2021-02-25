@@ -520,7 +520,7 @@ Once you have [Git](https://git-scm.com/) and [Pip](https://pip.pypa.io/en/stabl
    $ source env/Scripts/activate
    ```
 
-8. In focus folder make a `.env` file and add the variables below.
+8. In AGame folder make a `.env` file and add the variables below.
 
    > There is a handy .templates.env file with all the variables.
 
@@ -678,7 +678,7 @@ You will need a [AWS](https://aws.amazon.com/s3/) account and a [S3 bucket](http
             MEDIA_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
         ```
 
-        >Specifies the hosts that focus can run on
+        >Specifies the hosts that AGame can run on
 
         ```python
             ALLOWED_HOSTS = ['127.0.0.1', 'agame-app-ms4.herokuapp.com']

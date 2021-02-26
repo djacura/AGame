@@ -5,7 +5,7 @@
    - [**Account testing**](#account-testing)
    - [**Merchandise store testing**](#merchandise-store-testing)
    - [**Games Testing**](#games-testing)
-   - [**Shop, Shopping Cart and  Checkout**](#shop-shopping-cart-and-checkout)
+   - [**Subscription Testing**](#subscription-testing)
    - [**Blogs**](#blogs)
    - [**Member selection, Programs list and Subscription payment**](#member-selection-orograms-list-subscription-payment)
    - [**Dashboard**](#dashboard)
@@ -157,6 +157,43 @@ as they did not know what they could potentially play.
 - so to fix this I changed the format so you could not see game details without a subscription membership and this was a better format.
 and allowed the user to be able to see the games they could play before subscribing they were more likely to subscribe, this
 also came from user testing as well.
+
+---
+
+## Subscription Testing
+
+in this section I tested the aspects of the subscription part of the website.
+
+#### User Stories
+
+- As a User I want to be able to View the subscriptions available to me So that I can see how much it costs
+- As a User I want to be able to cancel my subscription at any point So that I no longer pay for it.
+- As a User I want to be able to view my subscription status so that I can see if it is active or not.
+
+#### Tests
+
+- Checked that when signing up for an account that a free account was created
+- Checked that when logged in that my profile showed a free account status
+- Checked that when logged in clicking on subscriptions took the user to the subscriptions page
+- Checked that the Correct Price was shown for each Subscription tier
+- Checked that clicking on subscribe that it took the user to the subscription payment page
+- Chcked that after subscribing the membership status changed
+- Checked that the user could successfully cancel thier Subscription
+
+#### Test result
+
+- When signing up for an account on the Profile page the correct Free account was shown
+- When logged in could see the subscriptions link in the top nav (could not see this if not logged in)
+- successfully Redirected user to the subscriptions payment page and loaded correct subscription details
+- the correct Price was loaded for each subscription and so was the correct subscription info for each tier
+- The subscription payment went through successfully and sent the user an email invoice and redirected them to their profile page
+- This then also showed the correct subscription status and also then showed the subscription date and next payment date and cancel subscription button
+- Clicking on the cancel subscription button successfully loaded the cancel modal
+- Clicking on confirm cancel subscription cancelled the subscription and then showed the correct tier in the Profile
+
+### Bugs
+
+- No bugs were encountered during this stage of testing.
 
 ---
 

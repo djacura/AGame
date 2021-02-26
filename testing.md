@@ -197,3 +197,41 @@ in this section I tested the aspects of the subscription part of the website.
 
 ---
 
+## Admin testing
+
+In this section I tested the aspects of the Admin user and super user section of the website
+
+#### User Stories
+
+- As a Admin I want to be able to Add a product So that I can add new products to the merchandise page.
+- As a Admin I want to be able to Edit/Update an Item So that I can change details about the product.
+- As a Admin I want to be able to Delete a product So that I can remove item not for sale anymore.
+- As a Admin I want to be able to Add new Games So that I can increase the Library of Game available to a User.
+
+#### Tests
+
+- Check the Add a Product part of the site
+- Check the ability to edit/delete products from the merchandise pages
+- Check the ability to add games to the site
+- Check the ability to edit/delete games from the games pages
+- Check links to edit/delete are visable to only admin and super users
+- Check the ability of admin user to see the items in the corerct order in the admin panels
+
+#### Test result
+
+- Paged throughout all the pages of the website and the admin icon was always there.
+- Logged in as admin all okay
+- Clicked on the ‘Products’ button and clicked on the products name and picture,  
+  I was redirected to products details, I was able to edit and delete a product on this page
+- Clicked on the prouduct management in the top my account link and successfully added a product to the store
+- Clicked on the Add a game management in the top of my account link and successfully added a new game
+- Clicked on the ‘Games’ button and clicked on the game name and picture, 
+  I was redirected to game details, I was able to edit and delete a game on this page
+- successfully logged into the django admin and all items could be viewed and ordered correctly
+
+### Bugs
+
+- No bugs were encountered during this stage of testing.
+
+---
+

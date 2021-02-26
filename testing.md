@@ -233,6 +233,13 @@ In this section I tested the aspects of the Admin user and super user section of
 
 ---
 
+<div align="right">
+
+[Back to Top :arrow_up: ](#testing)
+
+</div>
+ <div align="left">
+
 ## Other Bugs
 
 While testing here is Any other bugs that I managed to encounter while testing the website and during development
@@ -381,3 +388,41 @@ As you can see from the above image I then corrected this an copied over from St
 
 ---
 
+# Validation
+
+This Section is all about the Validation I carried out on the website.
+
+### HTML
+
+- All HTML pages were tested with W3C Markup Validation Service. There are a good few errors because the W3C Markup does not recognize Jinja templating. No other errors.
+
+### CSS
+
+- I ran my css file through the W3c CSS Validation Service.
+- I got a couple of errors all pointing to (min-device-width) which is for a media query but checked and it works perfectly.
+
+### python
+
+ - I ran my python code through [pep8 online](http://pep8online.com/) Checker and fixed any issues that occured
+ - Apart from a lot of line too long mostly due to comments which some can be moved so I did and some I couldn`t work out how to fix
+
+### Lighthouse Tests
+
+- I ran lighthouse checks for both mobile and desktop view and other than image sizes and file generation was really good.
+
+#### Lighthouse desktop :
+
+![Lighthouse-desktop](media/lighthouse_desktop.JPG)
+
+#### Lighthouse mobile :
+
+![Lighthouse-mobile](media/lighthouse_mobile.JPG)
+
+Overall I am happy with all the testing carried out and no Major errors or Breaks to the site.
+
+<div align="right">
+
+[Back to Top :arrow_up: ](#testing)
+
+</div>
+ <div align="left">

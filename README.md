@@ -464,7 +464,7 @@ This Project Uses HTML, CSS, Javascript, Python, and Django Technologies.
 
 # Testing
 
-Testing, Bugs and Validation information and be found at [Testing.md](https://github.com/)
+Testing, Bugs and Validation information and be found at [Testing.md](https://github.com/djacura/AGame/blob/master/testing.md)
 
 ---
 
@@ -522,18 +522,15 @@ Once you have [Git](https://git-scm.com/) and [Pip](https://pip.pypa.io/en/stabl
 
 8. In AGame folder make a `.env` file and add the variables below.
 
-   > There is a handy .templates.env file with all the variables.
-
    | Key                 |      Value      |
    | ------------------- | :-------------: |
    | SECRET_KEY          | < Your Values > |
    | EMAIL_HOST_PASS     | < Your Values > |
    | EMAIL_HOST_USER     | < Your Values > |
-   | NOTIFY_EMAIL        | < Your Values > |
    | DEFAULT_FROM_EMAIL  | < Your Values > |
    | STRIPE_PUBLIC_KEY   | < Your Values > |
    | STRIPE_SECRET_KEY   | < Your Values > |
-   | STRIPE_SECSTRIPE_WH | < Your Values > |
+   | STRIPE_WH_SECRET    | < Your Values > |
 
 9. Install all the requirements needed to run the project.
 
@@ -615,7 +612,7 @@ You will need a [AWS](https://aws.amazon.com/s3/) account and a [S3 bucket](http
 
     > This uses Postgres in deployment and sqlite3 in development.
 
-13. Enter in all your AWS variables as well as all your `.env` variables into Heroku's Config Vars.
+13. Enter in all your AWS variables into Heroku's Config Vars.
 
     | Key                   |      Value      |
     | --------------------- | :-------------: |
@@ -666,7 +663,6 @@ You will need a [AWS](https://aws.amazon.com/s3/) account and a [S3 bucket](http
             AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
             AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
             AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-            AWS_DEFAULT_ACL = None
 
         # Static and media files
 
@@ -674,14 +670,16 @@ You will need a [AWS](https://aws.amazon.com/s3/) account and a [S3 bucket](http
             STATICFILES_LOCATION = 'static'
             DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
             MEDIAFILES_LOCATION = 'media'
-            STATIC_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-            MEDIA_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+        
+        # Override the static and media URLs in production
+            STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+            MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
         ```
 
         >Specifies the hosts that AGame can run on
 
         ```python
-            ALLOWED_HOSTS = ['127.0.0.1', 'agame-app-ms4.herokuapp.com']
+            ALLOWED_HOSTS = ['agame-app-ms4.herokuapp.com', 'localhost', '127.0.0.1']
          ```
 
 20. You are ready to push to Heroku

@@ -6,14 +6,9 @@
    - [**Merchandise store testing**](#merchandise-store-testing)
    - [**Games Testing**](#games-testing)
    - [**Subscription Testing**](#subscription-testing)
-   - [**Blogs**](#blogs)
-   - [**Member selection, Programs list and Subscription payment**](#member-selection-orograms-list-subscription-payment)
-   - [**Dashboard**](#dashboard)
-   - [**Login**](#login)
-   - [**The Admin**](#the-admin)
-3. [**Automated Testing**](#automated-testing)
-4. [**Bugs**](#bugs)
-5. [**Validation**](#validation)
+   - [**Admin testing**](#admin-testing) 
+3. [**Other Bugs**](#other-bugs)
+4. [**Validation**](#validation)
 
 ---
 
@@ -42,6 +37,7 @@ This section is all about how I tested the Account part of the website from user
 - As a User I want to be able to Easily Recover my Password So I can regain Access to my Account.
 - As a User I want to be able to Recieve an Email Confirming After Registering on the site So I can Verify my Registration was successful.
 - As a User I want to be able to Have a Personlized account So I can view my order history and save my personal Information.
+- As a User I want to be able to Login with a Social media Account So it's easier for me to be able to login.
 
 #### Tests
 
@@ -54,6 +50,7 @@ This section is all about how I tested the Account part of the website from user
 - clicked on profile link to see order history
 - updated personal details and clicked on the update information button
 - clicked the logout button link in top nav bar
+- Checked that loggin in through social media login worked
 
 #### Test result
 
@@ -66,6 +63,7 @@ This section is all about how I tested the Account part of the website from user
 - the link successfully took me to my profile with the order history displaying correctly (if orders are present)
 - details were successfully updated and changed and recieved success toast with correct message displayed
 - successfully logged the user out and directed back to the homepage
+- succesfully managed to login with a social account and create an account as well
 
 ### Bugs 
 
@@ -232,6 +230,154 @@ In this section I tested the aspects of the Admin user and super user section of
 ### Bugs
 
 - No bugs were encountered during this stage of testing.
+
+---
+
+## Other Bugs
+
+While testing here is Any other bugs that I managed to encounter while testing the website and during development
+
+### Orders
+
+- While Testing the website, I created an Order from the Merchandise store and found that after checkout I had 2 orders being created
+in the order history section of my profile but was only getting one email confirmation.
+
+> After searching through the Slack and online found that I must have an issue in my webhook handler.
+
+### Fix
+
+Then searching through found that the I had it so that when you are subscribed to the website it created a second account for the user
+so i then changed the webhook handler to check for a subscription creation event and then add a send email function so that
+it wouldnt recognise this as a second order and it fixed this issue.
+
+---
+
+### Payment Intent Error
+
+- While Testing the website found that when trying to save the user details it would not save the correct info and anytime an order was created
+I was getting an Payent Intent Error coming up.
+
+> After checking the error report and serching around online found that this was probably being created because I had not written the code
+correctly somewhere in the files.
+
+### Fix
+
+After searching through the django error console and through the code found that I had spelled something incorrectly.
+
+```python
+    order_form = OrderForm(initial={
+        'full_name': profile.default_full_name,
+        'email': profile.user.email,
+        'phone_number': profile.default_phone_number,
+        'country': profile.default_country,
+        'postcode': profile.default_postcode,
+        'tonw_or_city': profile.default_tonw_or_city,
+        'street_address1': profile.default_street_address1,
+        'street_address2': profile.default_street_address2,
+        'county': profile.default_county,
+    })
+```
+
+It was the fact that I had spelled the Town or city incorrect and that was bringing up the error.
+
+---
+
+### Delivery Info Not Showing
+
+- While testing had an issue where the delivery info was not showing when succesfully completing an order and being on the order confirmation
+page the delivery info was missing from the order.
+
+> While checking through the code and on slack I found the answer to my error.
+
+### Fix
+
+After going through the code and comparing to the code used previously I found the error:
+
+```python
+    if save_info:
+        profile_data = {
+            'default_full_name': order.full_name
+            'default_phone_number': order.phone_number
+            'default_country': order.country
+            'default_postcode': order.postcode
+            'default_town_or_city': order.town_or_city
+            'default_street_address1': order.street_address1
+            'default_street_address2': order.street_address2
+            'default_county': order.county
+        }
+        user_profile_form = UserProfileForm(profile_data, instance=profile)
+        if user_profile_form.is_valid():
+            user_profile_form.save()
+```
+
+I Had forgot the Comma on the end of the line in the save_info section of the checkout views.py files
+
+```python
+    if save_info:
+        profile_data = {
+            'default_full_name': order.full_name,
+            'default_phone_number': order.phone_number,
+            'default_country': order.country,
+            'default_postcode': order.postcode,
+            'default_town_or_city': order.town_or_city,
+            'default_street_address1': order.street_address1,
+            'default_street_address2': order.street_address2,
+            'default_county': order.county,
+        }
+        user_profile_form = UserProfileForm(profile_data, instance=profile)
+        if user_profile_form.is_valid():
+            user_profile_form.save()
+```
+
+The commas where then added and this then fixed the issue I was having.
+
+---
+
+### Stripe Country Field Not Grey
+
+- I had an issue where the Stripe Country Field was not showing Grey for the default
+
+> When I checked this I know thjat this came up in the Boutique Ado mini project as an issue so I knew what it might be
+
+### Fix
+
+When checking the code found that the issue was that I had not put the Javascript for the element in the file.
+
+```python
+    {% block postloadjs %}
+        {{ block.super }}
+        {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+        {{ client_secret|json_script:"id_client_secret" }}
+        <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+    {% endblock %}
+```
+The code should have had the Stripe country field JS file that I had written in the postloadjs section of the checkout as you can see below
+
+```python
+    {% block postloadjs %}
+        {{ block.super }}
+        {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+        {{ client_secret|json_script:"id_client_secret" }}
+        <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+        <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+    {% endblock %}
+```
+
+---
+
+### Stripe 400 Error
+
+- When Carrying out an order or subscribing to the website found was getting an Stripe 400 error coming up
+
+> When Checking on slack and also on the internet with the error code found that it must be an issue with the Stripe id_stripe_public_key
+
+### Fix
+
+When Checking the settings on the website and also on Heroku found that the STRIPE_WH_SECRET key was not correct from Stripe
+
+![Stripe Secret Key](media/WH_secret_error.jpg)
+
+As you can see from the above image I then corrected this an copied over from Stripe the correct secret key
 
 ---
 

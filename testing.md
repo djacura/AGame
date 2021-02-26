@@ -4,7 +4,7 @@
 2. [**Manual Testing**](#manual-testing)
    - [**Account testing**](#account-testing)
    - [**Merchandise store testing**](#merchandise-store-testing)
-   - [**Home**](#home)
+   - [**Games Testing**](#games-testing)
    - [**Shop, Shopping Cart and  Checkout**](#shop-shopping-cart-and-checkout)
    - [**Blogs**](#blogs)
    - [**Member selection, Programs list and Subscription payment**](#member-selection-orograms-list-subscription-payment)
@@ -28,16 +28,6 @@ This is printed out in the terminal and on the localhost. And because of this fe
 
 So with the manual testing section of this I went through each of the user stories which I had come up with and checked each one to 
 make sure that the website works the way that it should.
-
-#### User Story 1
-- As a User I want to be able to view a list of games I can play so I can see what I want to play.
-
-#### Test
-- Clicked on the Game link in the top nav bar
-- Then signed in as you have to be logged in to see the games section
-
-#### Test result
-- The test passed could login and view all the games on the website.
 
 ---
 
@@ -124,6 +114,49 @@ This section is how I tested the Merchandise store part of the website
 ### bugs
 
 - No Bugs were found during testing of this section of the website.
+
+---
+
+## Games Testing
+
+This section is about how I tested the games section of the website
+
+#### User Stories
+
+- As a User I want to be able to view a list of games I can play so I can see what I want to play.
+- As a User I want to be able to View the indiviudal games that I can play So that I can download them and play.
+
+#### Tests
+
+- Clicked on the Game link in the top nav bar
+- Checked that could not see games details as needed to be a Pro member
+- Signed up for a subscrition to be able to play the games
+- Checked that could then see a list of the games to be able to play
+- Checked could see the games details page
+- Checked could click the button to play the Game
+- Checked could search for a game that I wanted to play
+
+#### Test result
+
+- The link successfully took me to the games section of the website 
+- before subscription went through, successfully saw toast that said you have to be a Pro member to view games
+- Then signed in successfully and successfully subscribed to the website
+- then clicked on games and successfully viewed game detail page
+- All game details successfully loaded correctly
+- Clicked the button to play the game but nothing happened as links not real
+- successfully searched for games on webiste using game name or description term
+
+### Bugs
+
+- No bugs were found during this section although originally had it so that you could not see the games at all without a subscrition, but
+found this was not good as users could not see what games they could play without subscribing to the website so some users would not sign up
+as they did not know what they could potentially play. 
+
+#### Fixes
+
+- so to fix this I changed the format so you could not see game details without a subscription membership and this was a better format.
+and allowed the user to be able to see the games they could play before subscribing they were more likely to subscribe, this
+also came from user testing as well.
 
 ---
 

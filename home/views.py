@@ -17,3 +17,8 @@ def index(request):
     }
 
     return render(request, 'home/index.html', context)
+
+
+def terms(request):
+
+    return render(request, 'home/terms.html')

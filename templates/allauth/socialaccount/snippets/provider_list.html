@@ -14,9 +14,10 @@
 {% endfor %}
 {% endif %}
 
-  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} btn button px-2 w-100 rounded-10" 
+<a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} btn button px-2 my-2 w-75 rounded-10" 
      href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
      <i class="fab fa-google mr-4"></i>
-     <span class="aw">Sign in with </span>{{provider.name}}</a>
+     <span class="aw">Sign in with </span>{{provider.name}}
+</a>
 
 {% endfor %}

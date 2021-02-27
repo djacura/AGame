@@ -386,6 +386,19 @@ When Checking the settings on the website and also on Heroku found that the STRI
 
 As you can see from the above image I then corrected this an copied over from Stripe the correct secret key
 
+
+---
+
+### Bugs not fixed
+
+I have this one bug I cant seem to fix and have checked all things and online and cant seem to solve it I hopefully will be able to go back and sort 
+this out once I have better knowlodge of this.
+
+> The issue I am having is that when you go to the cart page the decrement selector and increment selector buttons do not
+grey out and disable when at 1 and 99 like they do on my product detail page.
+
+I am hoping to solve this at some point but including it here in case I didnt manage to.
+
 ---
 
 # Validation

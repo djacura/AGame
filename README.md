@@ -16,7 +16,7 @@
 
 This is my AGame Website, that I have created using HTML, CSS, Javascript and Python code using Django and then deployed on Heroku. 
 This website is intended for users to be able to be able to sign up for a Game subscription that will then enable them to download and then
-play games, they will also be able to shop on the merchandise store. all while using having an account that can track their subscription status
+play games, they will also be able to shop on the merchandise store. All while using having an account that can track their subscription status
 and also view their account order history and cancel their subscription.
 
 ## Table of Contents
@@ -51,38 +51,38 @@ and also view their account order history and cancel their subscription.
 
 ### **Project Goals**
 
-The Aim of my project was to be able to create a site where the user could go to find games to play and then pay a small subscription fee to play them,
-they could also shop on the merhandise store and be able to purchase products from this, and with a "PRO" subscription they would also get
+The aim of my project was to be able to create a site where the user could go to find games to play and then pay a small subscription fee to play them,
+they could also shop on the merchandise store and be able to purchase products from this, and with a "PRO" subscription they would also get
 10% off on the store and also free delivery as a perk to go from the free subscription to the PRO version. along with this they would also need
-a profile account that they could login with, and with this track their order history and be able to cancel their subscription as they wish.
+a profile account that they could log in with, and with this track their order history and be able to cancel their subscription as they wish.
 
 ### User Stories
 
 #### User:
 
-1. As a User I want to be able to view a list of games I can play so I can see what I want to play.
-2. As a User I want to be able to Easily Register for an Account so I can View my profile.
-3. As a User I want to be able to Easliy login and logout so I can Access my personal profile.
-4. As a User I want to be able to Easily Recover my Password So I can regain Access to my Account.
-5. As a User I want to be able to Recieve an Email Confirming After Registering on the site So I can Verify my Registration was successful.
-6. As a User I want to be able to Have a Personlized account So I can view my order history and save my personal Information.
-7. As a User I want to be able to see a specific category of product in the store so I can find what I want.
-8. As a User I want to be able to Search for a Product by Name or description So that I can find a specific prouduct I want.
-9. As a User I want to be able to Easily see what I have searched for So that I can decide wether I want the product.
-10. As a User I want to be able to View individual Product Details So it can See the Price, description and information.
-11. As a User I want to be able to View the total cost of my purchase at any time So I can avoid spending too much.
-12. As a User I want to be able to View the subscriptions available to me So that I can see how much it costs.
-13. As a User I want to be able to View the indiviudal games that I can play So that I can download them and play.
-14. As a User I want to be able to cancel my subscription at any point So that I no longer pay for it.
-15. As a User I want to be able to view my subscription status so that I can see if it is active or not.
-16. As a User I want to be able to Login with a Social media Account So it's easier for me to be able to login.
+1. As a User, I want to be able to view a list of games I can play so I can see what I want to play.
+2. As a User, I want to be able to Easily Register for an Account so I can View my profile.
+3. As a User, I want to be able to Easliy login and logout so I can Access my personal profile.
+4. As a User, I want to be able to Easily Recover my Password So I can regain Access to my Account.
+5. As a User, I want to be able to Receive an Email Confirming After Registering on the site So I can Verify my Registration was successful.
+6. As a User, I want to be able to Have a Personalised account So I can view my order history and save my personal Information.
+7. As a User, I want to be able to see a specific category of product in the store so I can find what I want.
+8. As a User, I want to be able to search for a Product by Name or description So that I can find a specific product I want.
+9. As a User, I want to be able to easily see what I have searched for So that I can decide whether I want the product.
+10. As a User, I want to be able to view individual Product Details So I can See the Price, description and information.
+11. As a User, I want to be able to view the total cost of my purchase at any time So I can avoid spending too much.
+12. As a User, I want to be able to view the subscriptions available to me So that I can see how much it costs.
+13. As a User, I want to be able to view the individual games that I can play So that I can download them and play.
+14. As a User, I want to be able to cancel my subscription at any point So that I no longer pay for it.
+15. As a User, I want to be able to view my subscription status so that I can see if it is active or not.
+16. As a User, I want to be able to Login with a Social media Account So it's easier for me to be able to log in.
 
 #### Admin:
 
-17. As a Admin I want to be able to Add a product So that I can add new products to the merchandise page.
-18. As a Admin I want to be able to Edit/Update an Item So that I can change details about the product.
-19. As a Admin I want to be able to Delete a product So that I can remove item not for sale anymore.
-20. As a Admin I want to be able to Add new Games So that I can increase the Library of Game avaialbe to a User.
+17. As a Admin, I want to be able to Add a product So that I can add new products to the merchandise page.
+18. As a Admin, I want to be able to Edit/Update an Item So that I can change details about the product.
+19. As a Admin, I want to be able to Delete a product So that I can remove item not for sale anymore.
+20. As a Admin, I want to be able to Add new Games So that I can increase the Library of Game available to a User.
 
 <div align="right">
 
@@ -94,17 +94,17 @@ a profile account that they could login with, and with this track their order hi
 
 Most of the design of my website came from inspiration from another Game subscription website such as 
 [Xbox Game Pass](https://www.xbox.com/en-GB/xbox-game-pass)
-This sites helped with the information that I was going to need and the layout of my website.
+This site helped with the information that I was going to need and the layout of my website.
 
 ### layout
 
-The Layout of the site was using a Grid formation and layout taken from the [Bootstrap](https://getbootstrap.com/) webiste, 
-this webiste was designed heavily off the back of the Boutique Ado mini project, that was done just before this milestone project,
-As I feel this had the perfect base layout for creating my webiste and a mobile first approach.
+The Layout of the site was using a Grid formation and layout taken from the [Bootstrap](https://getbootstrap.com/) website, 
+this website was designed heavily off the back of the Boutique Ado mini-project, which was done just before this milestone project,
+As I feel this had the perfect base layout for creating my website and a mobile-first approach.
 
 ### Font
 
-The fonts that I decided to use was "Roboto Slab" and "Sans serif" as a backup and found this using 
+The fonts that I decided to use was "Roboto Slab" and "Sans serif" as a backup and found this using the
 [Google fonts website](https://fonts.google.com/) Which worked well from my previous Project.
 
 ### Colours
@@ -151,16 +151,16 @@ You may also use the social account to sign up and create an account. all accoun
 **Sign Up and Login.**
 You may use the social account buttons to sign in or use the form.
 The form has two fields, ‘email’ and ‘Password’ and a remember me button and a link to your if you have forgotten your password.
-All of [Allauth](https://django-allauth.readthedocs.io/en/latest/) I have customised the forms and buttons to fit the themes of the site.
+All of [Allauth](https://django-allauth.readthedocs.io/en/latest/) I have customized the forms and buttons to fit the themes of the site.
 
 ## Navigation
 
 #### Navbar
 
-The navbar is fixed to top of each page, This makes navigation easer and quicker.
+The navbar is fixed to the top of each page, This makes navigation easer and quicker.
 
-- **Left - AGame Logo** - Clickable link to the home page from anywhere on the web site.
-- **Center - Page navigation** - This is the main pages navigation to pages and changed depending on login and user auth.
+- **Left - AGame Logo** - Clickable link to the home page from anywhere on the website.
+- **Center - Page navigation** - have links to the privacy and legal policy sections of the site.
 - **Right - User and Cart** - This has the user profile area and also the cart.
 
 #### The Footer
@@ -187,21 +187,19 @@ And it is divided into 4 sections.
 
 #### Section 1
 
-This section is the main part of the page which ther users first see, a full page background, with a floating jumbotron
-that welcomes the users to the site and tells them what to expect of the site.
+This section is the main part of the page which the users first see, a full-page background, with a floating jumbotron that welcomes the users to the site and tells them what to expect of the site.
 
 #### Section 2
 
-This area is for the About us esection which gives users quick 4 points of the best parts of AGame, and what we are about.
+This area is for the About us section which gives users a quick 4 points of the best parts of AGame, and what we are about.
 
 #### Section 3
 
-This section of the site just gives users a brief look at what games they can expect to play when the subscribe to the service.
+This section of the site just gives users a brief look at what games they can expect to play when they subscribe to the service.
 
 #### Section 4
 
-This section is a collapsible area for the most frequently asked question of users to the site also based off the manual testing 
-that I had some people carry out and then gathered the most asked questions which populated this section.
+This section is a collapsible area for the most frequently asked question of users to the site also based on the manual testing that I had some people carry out and then gathered the most asked questions which populated this section.
 
 ---
 
@@ -211,7 +209,7 @@ that I had some people carry out and then gathered the most asked questions whic
   This is where you can search the merchandise store for what you are looking for.
 
 - **Category Area**
-  This where the User can select the category they are looking for so they can narrow their search down to the specifc category they are looking for.
+  This where the User can select the category they are looking for so they can narrow their search down to the specific category they are looking for.
 
 - **Products**
   The products are displayed on cards, are positioned side by side in rows.
@@ -224,8 +222,8 @@ that I had some people carry out and then gathered the most asked questions whic
 
 ## Product Details
 
-The product Details page is layed out like follows: \
-The center is divided in half, the left hand side has picture of the product, and on the right is the information:
+The Product Details page is laid out like follows: \
+The center is divided in half, the left-hand side has a picture of the product, and on the right is the information:
 
 - Name of the product
 - Price of product
@@ -240,9 +238,9 @@ Then Below the product details section is the Comments section.
 - Form to fill out including name and review
 - then all comments will be listed out below the product.
 
-I also wanted to add a rating element to the comments that would then change the rating of the products as the reviews were added. and I also
-Wanted to set up this section so that when a user logs in they wouldnt have to add their name it would do that already but didnt have enough time
-so will probably add this at a later date.
+I also wanted to add a rating element to the comments that would then change the rating of the products as the reviews were added. 
+and I also wanted to set up this section so that when a user logs in they wouldn't have to add their name it would do that already 
+but didn't have enough time so will probably add this at a later date.
 
 ---
 
@@ -252,14 +250,14 @@ The Shopping Cart is where you see a list of all the products that you have adde
 This has a table Row Design on desktop and a list type in mobile view. \
 Which consists of a list of all the products and information:
 
-- Image on the left
+- The image on the left
 - Product info - including the name the size (if applicable) and SKU number
 - Price
-- Quantity and quantity adjuster - Here you see the quantity of a product, you can increase and descrease the amount \
+- Quantity and quantity adjuster - Here you see the quantity of a product, you can increase and decrease the amount \
     and also you can update and then removed the product from your cart from here as well.
 - Subtotal - this calculated the subtotal of how many items you had of this type.
 
-In the bottom right corner is the The Order Summary which holds all the financial details of the order:
+In the bottom right corner is the Order Summary which holds all the financial details of the order:
 
 - Cart Total
 - Discounts - (if any applicable)
@@ -267,14 +265,14 @@ In the bottom right corner is the The Order Summary which holds all the financia
 - Delivery charge (if applicable)
 - Grand Total
 - Keep shopping button - which will take you back to the shop.
-- Secure Checkout button - which will take to the check out.
+- Secure Checkout button - which will take to the checkout.
 
 ---
 
 ## Checkout
 
-Full page layout with a user order form to complete: \
-This form would also be filled in automatically from the details stored in the My profile section of the site.
+Full-page layout with a user order form to complete: \
+This form would also be filled in automatically from the details stored in the My Profile section of the site.
 
 Customer details section:
 
@@ -288,7 +286,7 @@ Delivery Info:
 - Town or city
 - county
 - postal code
-- Country selector drop down
+- Country selector dropdown
 
 Payment card details: 
 
@@ -296,7 +294,7 @@ Payment card details:
 
 > #### Stripe Development Card
 >
-> A [Stripe](https://stripe.com/) payment system is inplace and >takes all major cards.
+> A [Stripe](https://stripe.com/) payment system is in place and >takes all major cards.
 > The numbers below are used to test the Stripe Payment software.
 >
 > - Card number - 4242 4242 4242 4242
@@ -305,14 +303,14 @@ Payment card details:
 
 Then the customer clicks on the Complete Order button to complete their order or Adjust cart button to go back to the cart.
 
-- Complete Order - Sends the card informtion to [Stripe](https://stripe.com/)
+- Complete Order - Sends the card information to [Stripe](https://stripe.com/)
 
 
 ## Checkout Success
 
-This page is where the user will come if the checkout was a success and does not error.
+This page is where the user will come to if the checkout was a success and does not error.
 
-This is layed out with Two shadow blocks one on the left and right both hold all your order details.
+This is laid out with Two shadow blocks one on the left and right both hold all your order details.
 
 ### Left block contains:
 
@@ -323,7 +321,7 @@ Order details:
 
 Order Details:
 
-- the items that where brought, incl how much each.
+- the items that were brought, incl how much each.
 
 Billing details:
 
@@ -359,7 +357,7 @@ and this will only show what is actually inputted into the form.
 ## Games Page
 
 - **Title**
-  This is the Title of the Page
+  This is the title of the Page
 
 - **Search bar**
   This is where you can search the Games page for what games you want.
@@ -371,8 +369,8 @@ and this will only show what is actually inputted into the form.
 
 ## Game Details
 
-The game Details page is layed out like follows: \
-The center is divided in half, the left hand side has picture of the product, and on the right is the information:
+The game Details page is laid out like follows: \
+The center is divided in half, the left-hand side has a picture of the product, and on the right is the information:
 
 - Title of the Game
 - Description of the Game
@@ -383,22 +381,22 @@ The center is divided in half, the left hand side has picture of the product, an
 ## Subscriptions Page
 
 This is where the user will come to subscribe to AGame \
-This is layed out with Two shadow blocks one on the left and right both hold the details of the subscriptions.
+This is laid out with Two shadow blocks one on the left and the right both hold the details of the subscriptions.
 
 - The Membership Name
 - The Price per month for the Membership
 - And what each Membership includes
 
-This also then goes on to the Subscritions payment page which is very simple and has just a reminder of what the user is subscribing to
+This also then goes on to the Subscriptions payment page which is very simple and has just a reminder of what the user is subscribing to
 and then a Stipe card element same as the checkout page to take customer details and then subscribe to the site.
 
 ---
 
 ## My Profile Page
 
-This page is where the user will come to view their personlised profile page
+This page is where the user will come to view their personalized profile page
 
-This is layed out with 3 shadow blocks, layed out across the page on desktop and stacked on mobile view. the blocks contain info as follows:
+This is laid out with 3 shadow blocks, laid out across the page on desktop and stacked on mobile view. the blocks contain info as follows:
 
 ### Left block contains:
 
@@ -407,7 +405,7 @@ Profile Admin:
 - User Email
 - Current subscription
 - Membership since (if subscribed)
-- Next paymentr date (if subscribed)
+- Next payment date (if subscribed)
 - Cancel Subscription button (if subscribed)
 - Password reset button
 
@@ -424,7 +422,7 @@ Default Delivery Info:
 - Country selector
 - button to update information.
 
-**If save info selector box is checked on the checkout page then that info saves into this area.**
+**If the save info selector box is checked on the checkout page then that info saves into this area.**
 
 ### Right Block contains:
 
@@ -449,7 +447,7 @@ This Project Uses HTML, CSS, Javascript, Python, and Django Technologies.
 * [CSS 3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) ~ Style sheet language used for styling the HTML.
 * [Github](https://github.com/) ~ was used to store the code in a repository and then [Gitpod](https://www.gitpod.io/) was used to write the code.
 * [Heroku](https://www.heroku.com/) ~ was used to deploy the site to the internet.
-* [Heroku Postgres](https://www.heroku.com/postgres) ~ PostgreSQL's used for database.
+* [Heroku Postgres](https://www.heroku.com/postgres) ~ PostgreSQL's used for the database.
 * [Font Awesome](https://fontawesome.com/) ~ Font Awesome icons
 * [Google Fonts](https://fonts.google.com/) ~ A library free licensed font families, an interactive web directory for browsing the library.
 * [Slack](https://slack.com/intl/en-ie/) ~ A workspaces allowing you to organize communications by channels for group discussions and allows for private messages to share information.
@@ -695,8 +693,8 @@ You will need a [AWS](https://aws.amazon.com/s3/) account and a [S3 bucket](http
 # **Credits**
 
 ### Content
-- The text for most of the site was added my myself and some of the games info were copied from the game website [Game](https://www.game.co.uk).
-- The description and info for the products was mostly taken from the [Corsair](https://www.corsair.com/uk/en/) Website and also added myself.
+- The text for most of the site was added by myself and some of the game info was copied from the game website [Game](https://www.game.co.uk).
+- The description and info for the products were mostly taken from the [Corsair](https://www.corsair.com/uk/en/) Website and also added myself.
 - And the products including the info were taken from the [Numskull](http://www.numskull.com/) website.
 - I even included my game I made for my MS2 project in the games section of the site to show that project off.
 
@@ -710,13 +708,13 @@ You will need a [AWS](https://aws.amazon.com/s3/) account and a [S3 bucket](http
 * The project’s code was developed by following the Code Institute and based on the understanding of the course material, 
 The code has been customized by myself to fit with the purpose of my project. Some comments with the credits have been added where needed.
 
-* The Django Documentation and Stack Overflow as well as some answers found on Slack have been referred to constantly
+* The Django documentation and Stack Overflow as well as some answers found on Slack have been referred to constantly
 and super helpful in figuring the different coding practices I needed.
 
-* The code that was used was also from some tutorial vidoes from the [Just Django](https://justdjango.com/) website that I used to help create the subscription part of my website. 
-the code that i have used and modifed I have commented on in my project in the area needed.
+* The code that was used was also from some tutorial videos from the [Just Django](https://justdjango.com/) website that I used to help create the subscription part of my website. 
+the code that I have used and modified I have commented on in my project in the area needed.
 
-* Also I have taken some code from a book called [Django 3 By Example](https://www.amazon.co.uk/Django-Example-powerful-reliable-applications/dp/1838981950) that also
+* Also, I have taken some code from a book called [Django 3 By Example](https://www.amazon.co.uk/Django-Example-powerful-reliable-applications/dp/1838981950) that also
 helped a lot with the comments section of the website.
 
 * Special Mention to all my family and friends that helped me out and also to my Mentor Spencer Bariball for his assistance with the project.

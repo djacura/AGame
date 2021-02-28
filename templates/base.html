@@ -38,12 +38,12 @@
   <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+            <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a class="navbar-brand" href="{% url 'home' %}">
                     <img src="{{ MEDIA_URL }}AGame Logo.jpg" width="240" height="80" alt="" loading="lazy">
                 </a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center my-0">
                     <li class="list-inline-item">
                         <a class="nav-link main-link" href="{% url 'home' %}">Home</a>
@@ -61,7 +61,7 @@
                     {% endif %}
                 </ul>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

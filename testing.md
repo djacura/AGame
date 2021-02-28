@@ -397,7 +397,8 @@ this out once I have better knowlodge of this.
 > The issue I am having is that when you go to the cart page the decrement selector and increment selector buttons do not
 grey out and disable when at 1 and 99 like they do on my product detail page.
 
-I am hoping to solve this at some point but including it here in case I didnt manage to.
+I am hoping to solve this at some point but including it here in case I didnt manage to. its not a major error on the website as when you do go below
+1 on the selector the money does not go down, it just removed the product from the cart altogether so is manageable.
 
 ---
 
